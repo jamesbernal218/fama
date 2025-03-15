@@ -9,4 +9,13 @@ class Category extends Model
 {
     use HasFactory;
     protected $table = 'categories';
+
+    public function scopeSearching($query)
+    {
+        $search = request()->search;
+        if (!$search)
+            return $query;
+
+        return $query->where('name', "like", "%" . $search . "%");
+    }
 }
