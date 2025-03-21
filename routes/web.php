@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,12 @@ Route::group(['prefix' => 'categories', 'middleware' => 'auth'], function () {
     Route::get('/actualizar-categories/{id}', [CategoriasController::class, 'updateCategories']);
     Route::put('/actualizar-categories/{id}', [CategoriasController::class, 'updateCategories'])->name('updateCategories');
     Route::delete('/eliminar-categories/{id}', [CategoriasController::class, 'deleteCategories']);
+});
+
+Route::group(['prefix' => 'medicine', 'middleware' => 'auth'], function () {
+    Route::get('/medicine', [MedicineController::class, 'medicine'])->name('medicine');
+    Route::get('/edit/{id}', [MedicineController::class, 'edit'])->name('medicines.edit');
+    Route::get('/delete/{id}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
 });
 
 require __DIR__ . '/auth.php';
