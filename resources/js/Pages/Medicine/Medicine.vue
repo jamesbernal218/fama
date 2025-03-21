@@ -1,13 +1,11 @@
 <template>
   <AuthenticatedLayout>
-    <template #header>
-      <h2 class="text-xl font-semibold leading-tight text-gray-800">Medicinas</h2>
-    </template>
-    <div class="my-5 flex flex-col justify-center items-center">
-      <GetButton route="addMedicine" title="Agregar" />
+    <div class="my-5 flex flex-col justify-start items-end me-10">
+      <GetButton route="addMedicine" title="Agregar Medicamento" />
     </div>
+
     <div class="p-6">
-      <h1 class="text-2xl font-bold mb-4">Medicines</h1>
+      <h1 class="text-2xl font-bold mb-4">Medicamentos</h1>
       <Table
         :columns="columns"
         :data="info.data"

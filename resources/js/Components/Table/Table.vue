@@ -24,12 +24,15 @@
 
           <td class="px-6 py-4 flex gap-2">
             <a
+              v-if="routeEdit"
               :href="`${routeEdit}/${item.id}`"
               class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
             >
               Editar
             </a>
+
             <a
+              v-if="routeDelete"
               :href="`${routeDelete}/${item.id}`"
               class="font-medium text-red-600 dark:text-red-500 hover:underline"
             >
@@ -55,11 +58,9 @@ export default {
     },
     routeEdit: {
       type: String,
-      required: true,
     },
     routeDelete: {
       type: String,
-      required: true,
     },
   },
 };
