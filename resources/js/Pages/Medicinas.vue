@@ -3,9 +3,6 @@ import { ref } from "vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 
-// Importa los componentes de PrimeVue
-import DataTable from "primevue/datatable";
-import Column from "primevue/column";
 
 // Datos de ejemplo
 const products = ref([
