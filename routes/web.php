@@ -42,7 +42,10 @@ Route::group(['prefix' => 'categories', 'middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'medicine', 'middleware' => 'auth'], function () {
     Route::get('/medicine', [MedicineController::class, 'medicine'])->name('medicine');
+    Route::get('/add-medicine', [MedicineController::class, 'addMedicine'])->name('addMedicine');
+    Route::post('/add-medicine', [MedicineController::class, 'addMedicine'])->name('PostAddMedicine');
     Route::get('/edit/{id}', [MedicineController::class, 'edit'])->name('medicines.edit');
+    Route::put('/edit/{id}', [MedicineController::class, 'edit'])->name('editMedicine');
     Route::get('/delete/{id}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
 });
 
