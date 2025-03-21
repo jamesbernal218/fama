@@ -9,7 +9,12 @@ class Medicine extends Model
 {
     use HasFactory;
     protected $table = 'medicines';
-
+    protected $fillable = [
+        'name',
+        'price',
+        'category_id',
+        'supplier_id',
+    ];
     public function scopeSearching($query)
     {
         $search = request()->search;

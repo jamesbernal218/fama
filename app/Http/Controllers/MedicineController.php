@@ -24,18 +24,28 @@ class MedicineController extends Controller
             'paginate' => $paginate
         ]);
     }
-
-    public function edit(Medicine $medicine)
+    public function addMedicine(Request $request)
     {
+        if ($request->isMethod('POST')) {
+            Medicine::create($request->all());
+        }
+        return Inertia::render("Medicine/AddMedicine");
+    }
+
+    public function edit(Request $request, $id)
+    {
+        if ($request->isMethod('PUT')) {
+            Medicine::findOrFail($id)->update($request->all());
+        }
+        $info = Medicine::findOrFail($id);
         return Inertia::render('Medicine/EditMedicine', [
-            'medicine' => $medicine
+            'info' => $info
         ]);
     }
 
     public function destroy(Medicine $id)
     {
-        dd($id);
-        $medicine->delete();
+        $id->delete();
         return redirect()->back()->with('success', 'Medicamento eliminado');
     }
 }
