@@ -1,7 +1,7 @@
 <template>
   <AuthenticatedLayout>
     <div class="py-2">
-      <Title title="Búsqueda Agregar Pagos" class="bg-general" />
+      <Title title="Editar Medicamento" class="bg-general" />
       <div
         class="max-w-8xl mx-auto sm:px-6 lg:px-8 overflow-hidden shadow-sm rounded-b-lg p-6 pb-5"
       >
@@ -42,6 +42,7 @@ import { useForm } from "@inertiajs/vue3";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import PutButton from "@/Components/Buttons/PutButton.vue";
 import InputField from "@/Components/Forms/InputField.vue";
+import Title from "@/Components/Forms/Title.vue";
 
 export default {
   props: {
@@ -56,6 +57,7 @@ export default {
     AuthenticatedLayout,
     PutButton,
     InputField,
+    Title,
   },
   data() {
     return {};
