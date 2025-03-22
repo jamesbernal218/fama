@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicine;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -27,6 +28,7 @@ class MedicineController extends Controller
     public function addMedicine(Request $request)
     {
         if ($request->isMethod('POST')) {
+            dd($request->all());
             Medicine::create($request->all());
         }
         return Inertia::render("Medicine/AddMedicine");
@@ -47,5 +49,12 @@ class MedicineController extends Controller
     {
         $id->delete();
         return redirect()->back()->with('success', 'Medicamento eliminado');
+    }
+
+    public function test()
+    {
+        $providers = Supplier::all();
+
+        return response()->json($providers);
     }
 }

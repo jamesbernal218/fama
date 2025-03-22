@@ -37,7 +37,7 @@ export default {
         { label: "Nombre", key: "name" },
         { label: "Precio", key: "price" },
         { label: "Categoría", key: "category_id" },
-        { label: "Provedor", key: "supplier_id" },
+        { label: "Proveedor", key: "supplier_id" },
       ],
     };
   },
