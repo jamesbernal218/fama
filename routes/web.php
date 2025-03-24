@@ -38,6 +38,7 @@ Route::group(['prefix' => 'categories', 'middleware' => 'auth'], function () {
     Route::get('/actualizar-categories/{id}', [CategoriasController::class, 'updateCategories']);
     Route::put('/actualizar-categories/{id}', [CategoriasController::class, 'updateCategories'])->name('updateCategories');
     Route::delete('/eliminar-categories/{id}', [CategoriasController::class, 'deleteCategories']);
+    Route::get('/index', [CategoriasController::class, 'index'])->name('index');
 });
 
 Route::group(['prefix' => 'medicine', 'middleware' => 'auth'], function () {

@@ -27,7 +27,7 @@
         </div>
         <div class="md:flex md:-mx pt-6">
           <div class="w-full px-2 md:mx-2 md:w-1/2">
-            <SelectComponent v-model="form.category_id" apiEndpoint="/medicine/test" />
+            <SelectComponent v-model="form.category_id" apiEndpoint="/categories/index" />
           </div>
         </div>
         <div class="my-5 flex flex-col justify-center items-center">
@@ -65,7 +65,7 @@ export default {
     const form = useForm({
       name: "",
       price: "",
-      category_id: 1,
+      category_id: null,
       supplier_id: 1,
     });
     return { form };

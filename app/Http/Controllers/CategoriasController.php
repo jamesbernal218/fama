@@ -61,4 +61,10 @@ class CategoriasController extends Controller
     {
         Category::findOrFail($id)->delete();
     }
+
+    public function index()
+    {
+        $categories = Category::all();
+        return response()->json($categories);
+    }
 }
