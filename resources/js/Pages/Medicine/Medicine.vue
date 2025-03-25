@@ -36,8 +36,8 @@ export default {
       columns: [
         { label: "Nombre", key: "name" },
         { label: "Precio", key: "price" },
-        { label: "Categoría", key: "category_id" },
-        { label: "Proveedor", key: "supplier_id" },
+        { label: "Categoría", key: "category_name" },
+        { label: "Proveedor", key: "supplier_name" },
       ],
     };
   },
