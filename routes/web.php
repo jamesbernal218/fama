@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -50,5 +51,10 @@ Route::group(['prefix' => 'medicine', 'middleware' => 'auth'], function () {
     Route::get('/delete/{id}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
     Route::get('/test', [MedicineController::class, 'test'])->name('test');
 });
+
+Route::group(['prefix' => 'supplier', 'middleware' => 'auth'], function () {
+    Route::get('/index', [SupplierController::class, 'index'])->name('index');
+});
+
 
 require __DIR__ . '/auth.php';

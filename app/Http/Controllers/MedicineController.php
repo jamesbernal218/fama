@@ -28,8 +28,8 @@ class MedicineController extends Controller
     public function addMedicine(Request $request)
     {
         if ($request->isMethod('POST')) {
-            dd($request->all());
             Medicine::create($request->all());
+            return redirect()->route('medicine')->with('success', 'Medicamento agregado correctamente');
         }
         return Inertia::render("Medicine/AddMedicine");
     }

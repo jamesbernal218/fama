@@ -29,6 +29,9 @@
           <div class="w-full px-2 md:mx-2 md:w-1/2">
             <SelectComponent v-model="form.category_id" apiEndpoint="/categories/index" />
           </div>
+          <div class="w-full px-2 md:mx-2 md:w-1/2">
+            <SelectComponent v-model="form.supplier_id" apiEndpoint="/supplier/index" />
+          </div>
         </div>
         <div class="my-5 flex flex-col justify-center items-center">
           <PostButton :form="form" route="PostAddMedicine" />
@@ -66,8 +69,9 @@ export default {
       name: "",
       price: "",
       category_id: null,
-      supplier_id: 1,
+      supplier_id: null,
     });
+
     return { form };
   },
 };

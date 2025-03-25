@@ -28,7 +28,6 @@ class CategoriasController extends Controller
     public function addCategories(Request $request)
     {
         if ($request->isMethod('POST')) {
-            dd($request->all());
             Category::create($request->all());
             return redirect()->back()->with('success', 'Categoria agregada exitosamente');
         }
