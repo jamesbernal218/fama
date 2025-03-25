@@ -38,6 +38,7 @@ class MedicineController extends Controller
     {
         if ($request->isMethod('PUT')) {
             Medicine::findOrFail($id)->update($request->all());
+            return redirect()->route('medicine')->with('success', 'Medicamento agregado correctamente');
         }
         $info = Medicine::findOrFail($id);
         return Inertia::render('Medicine/EditMedicine', [

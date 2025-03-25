@@ -26,7 +26,17 @@
           </div>
         </div>
         <div class="md:flex md:-mx pt-6">
-          <div class="w-full px-2 md:mx-2 md:w-1/2"></div>
+          <div class="md:flex md:-mx pt-6">
+            <div class="w-full px-2 md:mx-2 md:w-1/2">
+              <SelectComponent
+                v-model="form.category_id"
+                apiEndpoint="/categories/index"
+              />
+            </div>
+            <div class="w-full px-2 md:mx-2 md:w-1/2">
+              <SelectComponent v-model="form.supplier_id" apiEndpoint="/supplier/index" />
+            </div>
+          </div>
           <div class="w-full px-2 md:mx-2 md:w-1/2"></div>
         </div>
         <div class="my-5 flex flex-col justify-center items-center">
@@ -43,6 +53,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import PutButton from "@/Components/Buttons/PutButton.vue";
 import InputField from "@/Components/Forms/InputField.vue";
 import Title from "@/Components/Forms/Title.vue";
+import SelectComponent from "@/Components/Forms/SelectComponent.vue";
 
 export default {
   props: {
@@ -58,6 +69,7 @@ export default {
     PutButton,
     InputField,
     Title,
+    SelectComponent,
   },
   data() {
     return {};
