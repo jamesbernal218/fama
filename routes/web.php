@@ -33,12 +33,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::group(['prefix' => 'categories', 'middleware' => 'auth'], function () {
-    Route::get('/categories', [CategoriasController::class, 'categories'])->name('categories');
-    Route::get('/agregar-categories', [CategoriasController::class, 'addCategories']);
-    Route::post('/agregar-categories', [CategoriasController::class, 'addCategories'])->name('addCategories');
-    Route::get('/actualizar-categories/{id}', [CategoriasController::class, 'updateCategories']);
-    Route::put('/actualizar-categories/{id}', [CategoriasController::class, 'updateCategories'])->name('updateCategories');
-    Route::delete('/eliminar-categories/{id}', [CategoriasController::class, 'deleteCategories']);
     Route::get('/index', [CategoriasController::class, 'index'])->name('index');
 });
 
