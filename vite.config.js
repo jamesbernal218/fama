@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue'; // Importar el plugin de Vue
 
 export default defineConfig({
     plugins: [
@@ -7,10 +8,11 @@ export default defineConfig({
             input: ['resources/js/app.js'],
             refresh: true,
         }),
+        vue(), // Agregar el plugin de Vue
     ],
     build: {
-        manifest: true, // Asegura que se genere el manifest.json
-        outDir: 'public/build', // Cambia la carpeta de salida
-        emptyOutDir: true, // Limpia la carpeta antes de construir
+        manifest: true, 
+        outDir: 'public/build', 
+        emptyOutDir: true,
     }
 });
