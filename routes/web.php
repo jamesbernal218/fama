@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::group(['prefix' => 'categories', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'categories'], function () {
     Route::get('/index', [CategoriasController::class, 'index'])->name('index');
 });
 
